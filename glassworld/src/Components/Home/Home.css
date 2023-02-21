@@ -1,0 +1,77 @@
+*{
+    margin:0%;
+    padding : 0%;
+    font-weight: 600;
+}
+/* Put this in every where u wann use navbar */
+.snav p:hover{
+    border-bottom:2px solid rgb(13,13,46) ;
+    color: rgb(29, 29, 217);
+    cursor: pointer;
+}
+
+/* Put this in every where u wann use navbar */
+.fnav p:hover{
+    border-bottom:2px solid rgb(155, 139, 129) ;
+    color: rgb(12, 12, 224);
+    cursor: pointer;
+}
+
+
+.lens {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: rgb(255, 251, 251);
+    padding: 11px;
+}
+.lens img{
+    width: 18%;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+.main img {
+    width: 100%;
+}
+.cart {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 11px;
+    text-align: center;
+}
+.cart .card {
+    text-align: center;
+}
+.card button {
+    width: 100px;
+    height: 33px;
+    color: white;
+    background-color: rgb(52,180,180);
+    border-radius: 2px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+.card p{
+    font-size: 16px;
+}
+
+.cart .card img {
+  width: 70%;
+}
+.banner h2 {
+    text-align: center;
+    padding: 32px;
+}
+.banner .img img{
+    width: 100%;
+}
+.banner .t-img {
+ display: flex;
+ justify-content: center;
+ justify-content: space-around;
+}
+.t-img img {
+    width: 44%;
+}
