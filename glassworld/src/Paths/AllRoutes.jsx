@@ -11,6 +11,8 @@ import KidsGlasses from "../Components/KidsGlasses/KidsGlasses";
 import { PrivateRoute } from "./PrivateRoutes";
 import PageNotFound from "../Components/PageNotFound/PageNotFound";
 import SingleProductPage from "../Components/SingleProductPage/SingleProductPage";
+import LoginSuccess from "../Components/SuccesfullPage.jsx/LoginSuccessfull";
+import SignUpSuccess from "../Components/SuccesfullPage.jsx/SignupSuccessfull";
 
 const AllRoutes = () => {
   return (
@@ -32,6 +34,8 @@ const AllRoutes = () => {
       <Route path="/eye" element={<EyeGlasses />} />
       <Route path="*" element={<PageNotFound />} />
       <Route path="/products/:product_id" element={<SingleProductPage />} />
+      <Route path="/login/success" element={<LoginSuccess />} />
+      <Route path="/signup/success" element={<SignUpSuccess />} />
     </Routes>
   );
 };

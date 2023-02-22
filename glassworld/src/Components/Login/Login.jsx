@@ -16,14 +16,49 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContextProvider";
+import React from "react";
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const [login, singup] = useState(true);
+  const [log, singup] = useState(true);
+  const { login, isAuth } = useContext(AuthContext);
+  const [email, setEmail] = React.useState("eve.holt@reqres.in");
+  const [password, setPassword] = React.useState("cityslicka");
 
   const toogleForm = () => {
-    singup(!login);
+    singup(!log);
   };
+
+  const handleLogin = () => {
+    const userDetails = {
+      email,
+      password,
+    };
+    fetch("https://reqres.in/api/login", {
+      method: "POST",
+      body: JSON.stringify(userDetails),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json)
+        login(json.token);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  if(isAuth){
+    return <Navigate to={"/login/success"}/>
+  }
+
+  
 
   return (
     <div
@@ -40,10 +75,10 @@ export default function Login() {
           marginTop="30px"
           color={"red.700"}
         >
-          {login ? "Login Here" : "Signup Here"}
+          {log ? "Login Here" : "Signup Here"}
         </Button>
       </Center>
-      {login ? (
+      {log === false ? (
         <Flex minH={"100vh"} align={"center"} justify={"center"}>
           <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
             <Stack align={"center"}>
@@ -113,18 +148,26 @@ export default function Login() {
             <Stack align={"center"}>
               <Heading fontSize={"4xl"}>Sign in to your account</Heading>
               <Text fontSize={"lg"} color={"gray.600"}>
-                to enjoy all of our cool{" "} features ✌️
+                to enjoy all of our cool features ✌️
               </Text>
             </Stack>
             <Box rounded={"lg"} boxShadow={"lg"} p={8}>
               <Stack spacing={4}>
                 <FormControl id="email">
                   <FormLabel>Email address</FormLabel>
-                  <Input type="email" />
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </FormControl>
                 <FormControl id="password">
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" />
+                  <Input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </FormControl>
                 <Stack spacing={10}>
                   <Stack
@@ -140,6 +183,7 @@ export default function Login() {
                     _hover={{
                       bg: "blue.500",
                     }}
+                    onClick={handleLogin}
                   >
                     Sign in
                   </Button>

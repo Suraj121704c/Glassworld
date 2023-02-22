@@ -29,6 +29,8 @@ const ComputerGlasses = () => {
   const [products, setProducts] = useState([]);
   const [err, setError] = useState(false);
   const {q} = useContext(searchContext)
+  const [total, setTotal] = React.useState();
+
 
   // console.log(q)
 
@@ -39,6 +41,7 @@ const ComputerGlasses = () => {
     )
       .then((res) => {
         // console.log(res.data)
+        setTotal(res.headers["x-total-count"]);
         setProducts(res);
         setLoading(false);
       })
@@ -441,7 +444,7 @@ const ComputerGlasses = () => {
           PRE
         </Button>
         <Button>{page}</Button>
-        <Button onClick={() => setPage(page + 1)}>NEXT</Button>
+        <Button isDisabled={Math.ceil(total/9) === page} onClick={() => setPage(page + 1)}>NEXT</Button>
       </Flex>
 
       <Footer2 />

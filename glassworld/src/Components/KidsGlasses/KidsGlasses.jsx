@@ -444,7 +444,7 @@ const KidsGlasses = () => {
         </Button>
         <Button>{page}</Button>
         <Button
-          isDisabled={page === total / 9}
+          isDisabled={Math.ceil(total / 9) === page}
           onClick={() => setPage(page + 1)}
         >
           NEXT
