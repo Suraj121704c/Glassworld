@@ -86,7 +86,7 @@ const Home = () => {
             src="https://static1.lenskart.com/media/desktop/img/Sep21/cateeye.jpg"
             alt="expoloreimage"
           />
-          <p>Rounded</p>
+          <p>Clubmaster</p>
           <button>EXPLORE</button>
         </div>
 
@@ -95,7 +95,7 @@ const Home = () => {
             src="https://static1.lenskart.com/media/desktop/img/Sep21/image179.png"
             alt="exploreimage"
           />
-          <p>Rounded</p>
+          <p>Transparent</p>
           <button>EXPLORE</button>
         </div>
 
@@ -104,7 +104,7 @@ const Home = () => {
             src="https://static1.lenskart.com/media/desktop/img/Sep21/cateeye.jpg"
             alt="expoloreimage"
           />
-          <p>Rounded</p>
+          <p>Cat-Eye</p>
           <button>EXPLORE</button>
         </div>
       </div>

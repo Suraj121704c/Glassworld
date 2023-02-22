@@ -11,7 +11,7 @@ import {
   VStack,
   Spinner,
   Image,
-  Button
+  Button,
 } from "@chakra-ui/react";
 import { TbArrowsUpDown } from "react-icons/tb";
 import FrameType from "../ComputerGlasses/FramerType";
@@ -20,20 +20,25 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Footer2 } from "../Footer/Footer2";
 import { AiOutlineHeart } from "react-icons/ai";
-
+import { searchContext } from "../../Context/SearchContextProvider";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const KidsGlasses = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [err, setError] = useState(false);
-  const fetchproduct = (page) => {
+  const { q } = useContext(searchContext);
+  const [total, setTotal] = React.useState();
+
+  const fetchproduct = (page, q) => {
     setLoading(true);
     axios(
-      `https://easy-pink-bull-shoe.cyclic.app/Products?_page=${page}&_limit=9&_sort=id&_order=asc`
+      `https://easy-pink-bull-shoe.cyclic.app/Products?q=${q}&_page=${page}&_limit=9&_sort=id&_order=asc`
     )
       .then((res) => {
-        // console.log(res.data)
+        setTotal(res.headers["x-total-count"]);
         setProducts(res);
         setLoading(false);
       })
@@ -45,8 +50,8 @@ const KidsGlasses = () => {
   // console.log(products);
 
   useEffect(() => {
-    fetchproduct(page);
-  }, [page]);
+    fetchproduct(page, q);
+  }, [page, q]);
 
   // Sorting First
   const fetchAndUpdate2 = (order, page) => {
@@ -142,6 +147,8 @@ const KidsGlasses = () => {
         console.log(err);
       });
   };
+
+  // console.log(total)
   return (
     <div>
       <div>
@@ -418,9 +425,10 @@ const KidsGlasses = () => {
                             textDecoration: "line-through",
                           }}
                         >
-                          ₹{el.mprice}
+                          ₹{el.mPrice}
                         </span>
                       </Text>
+                      <Link to={`/products/${el.id}`}>MoreDetails...</Link>
                     </Box>
                   </Box>
                 </GridItem>
@@ -435,9 +443,13 @@ const KidsGlasses = () => {
           PRE
         </Button>
         <Button>{page}</Button>
-        <Button onClick={() => setPage(page + 1)}>NEXT</Button>
+        <Button
+          isDisabled={page === total / 9}
+          onClick={() => setPage(page + 1)}
+        >
+          NEXT
+        </Button>
       </Flex>
-
       <Footer2 />
     </div>
   );

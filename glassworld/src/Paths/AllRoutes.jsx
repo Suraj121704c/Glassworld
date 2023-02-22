@@ -31,7 +31,7 @@ const AllRoutes = () => {
       <Route path="/shades" element={<SunGlasses />} />
       <Route path="/eye" element={<EyeGlasses />} />
       <Route path="*" element={<PageNotFound />} />
-      <Route path="/product/:id" element={<SingleProductPage />} />
+      <Route path="/products/:product_id" element={<SingleProductPage />} />
     </Routes>
   );
 };

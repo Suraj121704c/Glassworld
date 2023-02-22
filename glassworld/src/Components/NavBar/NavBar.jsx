@@ -17,9 +17,8 @@ const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const {setq} = useContext(searchContext)
-
-  // console.log(q)
-
+  const {whishData} = useContext(searchContext)
+  
   return (
     <div>
       <nav
@@ -73,9 +72,24 @@ const NavBar = () => {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Add To WhisList</DrawerHeader>
+            <DrawerHeader>My WishList</DrawerHeader>
 
-            <DrawerBody></DrawerBody>
+            <DrawerBody>
+              {
+                whishData.length === 0 ? "WishList Is Empty" : (
+                  whishData.map((wish)=>(
+                     <div key={wish.id}>
+                       <img src={wish.imageTsrc} alt={wish.name}/>
+                       <h1>Name : {wish.name}</h1>
+                       <h2>Price : {wish.price}</h2>
+                       <h3>Shape : {wish.shape}</h3>
+                       <button style={{color : "white" , backgroundColor : "red",marginTop : "10px",marginBottom : "10px",width:"80px",borderRadius:"20px"}}>DELETE</button>
+                       <hr style={{marginBottom : "20px"}}/>
+                     </div>
+                  ))
+                )
+              }
+            </DrawerBody>
 
             <DrawerFooter></DrawerFooter>
           </DrawerContent>

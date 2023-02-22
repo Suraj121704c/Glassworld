@@ -21,6 +21,7 @@ import axios from "axios";
 import { Footer2 } from "../Footer/Footer2";
 import { searchContext } from "../../Context/SearchContextProvider";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const ComputerGlasses = () => {
   const [page, setPage] = useState(1);
@@ -29,7 +30,7 @@ const ComputerGlasses = () => {
   const [err, setError] = useState(false);
   const {q} = useContext(searchContext)
 
-  console.log(q)
+  // console.log(q)
 
   const fetchproduct = (page,q) => {
     setLoading(true);
@@ -422,9 +423,10 @@ const ComputerGlasses = () => {
                             textDecoration: "line-through",
                           }}
                         >
-                          ₹{el.mprice}
+                          ₹{el.mPrice}
                         </span>
                       </Text>
+                      <Link to={`/products/${el.id}`}>MoreDetails...</Link>
                     </Box>
                   </Box>
                 </GridItem>
