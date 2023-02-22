@@ -10,6 +10,7 @@ import ComputerGlasses from "../Components/ComputerGlasses/ComputerGlasses";
 import KidsGlasses from "../Components/KidsGlasses/KidsGlasses";
 import { PrivateRoute } from "./PrivateRoutes";
 import PageNotFound from "../Components/PageNotFound/PageNotFound";
+import SingleProductPage from "../Components/SingleProductPage/SingleProductPage";
 
 const AllRoutes = () => {
   return (
@@ -29,7 +30,8 @@ const AllRoutes = () => {
       <Route path="/contacts" element={<ContactGlasses />} />
       <Route path="/shades" element={<SunGlasses />} />
       <Route path="/eye" element={<EyeGlasses />} />
-      <Route path="*" element={<PageNotFound />}/>
+      <Route path="*" element={<PageNotFound />} />
+      <Route path="/product/:id" element={<SingleProductPage />} />
     </Routes>
   );
 };

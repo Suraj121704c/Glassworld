@@ -10,10 +10,15 @@ import {
   DrawerCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useContext } from "react";
+import { searchContext } from "../../Context/SearchContextProvider";
 
 const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const {setq} = useContext(searchContext)
+
+  // console.log(q)
 
   return (
     <div>
@@ -46,6 +51,7 @@ const NavBar = () => {
           }}
           type="text"
           placeholder="what are you looking for"
+          onChange={(e) => setq(e.target.value)}
         />
         <p style={{ marginTop: "17px", fontSize: "17px" }}>Track Order</p>
 
