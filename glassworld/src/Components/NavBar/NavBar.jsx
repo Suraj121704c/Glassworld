@@ -14,11 +14,16 @@ import { useContext } from "react";
 import { searchContext } from "../../Context/SearchContextProvider";
 
 const NavBar = () => {
+  const { whishData, setWhishData } = useContext(searchContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const {setq} = useContext(searchContext)
-  const {whishData} = useContext(searchContext)
-  
+  const { setq } = useContext(searchContext);
+
+  function handleDelete(id) {
+    const updatedTodos = whishData.filter((todo) => todo.id !== id);
+    setWhishData(updatedTodos);
+  }
+
   return (
     <div>
       <nav
@@ -41,12 +46,13 @@ const NavBar = () => {
         />
         <input
           style={{
-            width: "300px",
-            height: "27px",
+            width: "400px",
+            height: "35px",
             borderRadius: "3px",
             textAlign: "center",
             border: "2px solid gray",
             marginTop: "16px",
+            borderRadius:"20px"
           }}
           type="text"
           placeholder="what are you looking for"
@@ -75,20 +81,32 @@ const NavBar = () => {
             <DrawerHeader>My WishList</DrawerHeader>
 
             <DrawerBody>
-              {
-                whishData.length === 0 ? "WishList Is Empty" : (
-                  whishData.map((wish)=>(
-                     <div key={wish.id}>
-                       <img src={wish.imageTsrc} alt={wish.name}/>
-                       <h1>Name : {wish.name}</h1>
-                       <h2>Price : {wish.price}</h2>
-                       <h3>Shape : {wish.shape}</h3>
-                       <button style={{color : "white" , backgroundColor : "red",marginTop : "10px",marginBottom : "10px",width:"80px",borderRadius:"20px"}}>DELETE</button>
-                       <hr style={{marginBottom : "20px"}}/>
-                     </div>
-                  ))
-                )
-              }
+              {whishData.length === 0 ? (
+                <h1 style={{color : "green"}}>WishList is Empty! Please Add Items...</h1>
+              ) : (
+                whishData.map((wish) => (
+                  <div key={wish.id}>
+                    <img src={wish.imageTsrc} alt={wish.name} />
+                    <h1>Name : {wish.name}</h1>
+                    <h2>Price : {wish.price}</h2>
+                    <h3>Shape : {wish.shape}</h3>
+                    <button
+                      style={{
+                        color: "white",
+                        backgroundColor: "red",
+                        marginTop: "10px",
+                        marginBottom: "10px",
+                        width: "80px",
+                        borderRadius: "20px",
+                      }}
+                      onClick={() => handleDelete(wish.id)}
+                    >
+                      DELETE
+                    </button>
+                    <hr style={{ marginBottom: "20px" }} />
+                  </div>
+                ))
+              )}
             </DrawerBody>
 
             <DrawerFooter></DrawerFooter>

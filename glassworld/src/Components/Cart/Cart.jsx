@@ -12,7 +12,6 @@ import {
   Tooltip,
   useDisclosure,
 } from "@chakra-ui/react";
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import {
   AlertDialog,
   AlertDialogBody,
@@ -29,9 +28,31 @@ const Cart = () => {
   // console.log(cartData);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
+  const [data,setData] = React.useState(cartData)
+  
+ 
+  // console.log(data)
+
+  const handleQty = (id, val) => {
+    const newQuantity = data.map((el) => {
+      return el.id === id
+        ? {
+            ...el,
+            quntity: parseInt(el.quntity) + val,
+          }
+        : el;
+    });
+    setData(newQuantity);
+  };
+
+  function handleDelete(id) {
+    const updatedTodos = data.filter(todo => todo.id !== id);
+    setData(updatedTodos);
+  }
+
   return (
     <div>
-      {cartData.map((el) => (
+      {data.map((el) => (
         <Box
           display="flex"
           gap={6}
@@ -86,25 +107,13 @@ const Cart = () => {
                 </Text>
               </Box>
               <Divider borderBottom="dashed 1px #cecedf" borderTop="none" />
-              <Box display="flex" flexDirection="row" alignItems="center">
-                <Text
-                  mr="16px"
-                  textDecoration="underline"
-                  fontWeight="700"
-                  fontStyle="normal"
-                  lineHeight="24px"
-                  letterSpacing="-.02em"
-                  textTransform="capitalize"
-                  color="#000042"
-                  // onClick={() => {
-                  //   alert()
-                  //   props.refresh(el.id)
-
-                  // }}
-                  cursor="pointer"
-                >
-                  Remove
-                </Text>
+              <Box display="flex" flexDirection="row" alignItems="center" cursor={"pointer"}>   
+                 <Button bg={"blue.500"} color={"white"} _hover={{
+                  color : "black",
+                  bg : "white"
+                 }}
+                 onClick={() => handleDelete(el.id)}
+                 > Remove </Button> 
                 <Box>
                   <Flex alignItems="center" gap={2}>
                     <Button
@@ -114,16 +123,12 @@ const Cart = () => {
                         color: "white",
                         background: "red",
                       }}
-
-                      // onClick={() =>{
-                      //   props.updateminus(el.id,el.quntity)
-                      // }}
+                      onClick={()=>handleQty(el.id,-1)}
+                      isDisabled={el.quntity === 0}
                     >
-                      <Text>
-                        <AiOutlineMinusCircle size={15} />
-                      </Text>
+                      -
                     </Button>
-                    <Text>{parseInt(el.quntity) + 1}</Text>
+                    <Text>{(parseInt(el.quntity) + 1)}</Text>
                     <Button
                       bg="white"
                       color="green"
@@ -134,10 +139,9 @@ const Cart = () => {
                       // onClick={() =>{
                       //   props.update(el.id,el.quntity)
                       // }}
+                      onClick={()=>handleQty(el.id,1)}              
                     >
-                      <Text>
-                        <AiOutlinePlusCircle size={15} />
-                      </Text>
+                      +
                     </Button>
                   </Flex>
                 </Box>
@@ -148,7 +152,10 @@ const Cart = () => {
       ))}
       <Box textAlign={"center"} marginTop={"20px"}>
         <Heading color={"green"} marginBottom={"20px"}>
-          Total :{" "}
+          Total :{" "} ₹
+          {data.reduce((acc, el) => {
+            return acc + (parseInt(el.price)) * (parseInt(el.quntity) + 1);
+          }, 0)}
         </Heading>
         <Tooltip
           hasArrow
@@ -183,7 +190,7 @@ const Cart = () => {
               <Button ref={cancelRef} onClick={onClose}>
                 No
               </Button>
-              <Link to={"/"}>
+              <Link to={"/payment"}>
                 <Button colorScheme="red" ml={3} onClick={onClose}>
                   Yes
                 </Button>

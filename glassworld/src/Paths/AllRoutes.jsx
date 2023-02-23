@@ -13,6 +13,7 @@ import PageNotFound from "../Components/PageNotFound/PageNotFound";
 import SingleProductPage from "../Components/SingleProductPage/SingleProductPage";
 import LoginSuccess from "../Components/SuccesfullPage.jsx/LoginSuccessfull";
 import SignUpSuccess from "../Components/SuccesfullPage.jsx/SignupSuccessfull";
+import Payment from "../Components/Payment/Payment";
 
 const AllRoutes = () => {
   return (
@@ -35,7 +36,8 @@ const AllRoutes = () => {
       <Route path="*" element={<PageNotFound />} />
       <Route path="/products/:product_id" element={<SingleProductPage />} />
       <Route path="/login/success" element={<LoginSuccess />} />
-      <Route path="/signup/success" element={<SignUpSuccess />} />
+      <Route path="/success" element={<SignUpSuccess />} />
+      <Route path="/payment" element={<Payment />} />
     </Routes>
   );
 };

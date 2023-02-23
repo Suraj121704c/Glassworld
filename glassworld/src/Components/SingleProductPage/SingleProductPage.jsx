@@ -47,7 +47,7 @@ const SingleProductPage = () => {
     fetchAndUpdate();
   }, []);
 
-  // console.log(data);
+  // console.log(cartData);
 
   const handleCartData = () => {
     setCartData([...cartData, data]);

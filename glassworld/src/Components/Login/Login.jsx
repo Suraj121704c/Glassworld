@@ -20,13 +20,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../Context/AuthContextProvider";
 import React from "react";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [log, singup] = useState(true);
   const { login, isAuth } = useContext(AuthContext);
-  const [email, setEmail] = React.useState("eve.holt@reqres.in");
-  const [password, setPassword] = React.useState("cityslicka");
+  const [name, setName] = useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const toogleForm = () => {
     singup(!log);
@@ -54,10 +56,25 @@ export default function Login() {
       });
   };
 
-  if(isAuth){
-    return <Navigate to={"/login/success"}/>
+  if (isAuth) {
+    return <Navigate to={"/login/success"} />;
   }
 
+  const handleLRegister = () => {
+    const initState = {
+      email,
+      password,
+    };
+    axios({
+      method: "post",
+      url: `https://reqres.in/api/register`,
+      data: initState,
+    }).then(()=>{
+       alert(`Hello ${name}, Account Created Successfully`)
+    }).catch(()=>{
+      alert("Please  provide valid details")
+    })
+  };
   
 
   return (
@@ -75,7 +92,7 @@ export default function Login() {
           marginTop="30px"
           color={"red.700"}
         >
-          {log ? "Login Here" : "Signup Here"}
+          {log ? "SignUp Here" : "SignIn Here"}
         </Button>
       </Center>
       {log === false ? (
@@ -95,7 +112,9 @@ export default function Login() {
                   <Box>
                     <FormControl id="firstName" isRequired>
                       <FormLabel>First Name</FormLabel>
-                      <Input type="text" />
+                      <Input type="text" 
+                      onChange={(e) => setName(e.target.value)}
+                      />
                     </FormControl>
                   </Box>
                   <Box>
@@ -107,12 +126,17 @@ export default function Login() {
                 </HStack>
                 <FormControl id="email" isRequired>
                   <FormLabel>Email address</FormLabel>
-                  <Input type="email" />
+                  <Input type="email" placeholder={"enter your email"} 
+                  isRequired
+                  onChange={(e) => setEmail(e.target.value)}
+                  />
                 </FormControl>
                 <FormControl id="password" isRequired>
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
-                    <Input type={showPassword ? "text" : "password"} />
+                    <Input type={showPassword ? "text" : "password"} 
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
                     <InputRightElement h={"full"}>
                       <Button
                         variant={"ghost"}
@@ -134,6 +158,7 @@ export default function Login() {
                     _hover={{
                       bg: "blue.500",
                     }}
+                    onClick={handleLRegister}
                   >
                     Sign up
                   </Button>

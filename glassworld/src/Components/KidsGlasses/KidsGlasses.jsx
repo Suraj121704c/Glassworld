@@ -314,7 +314,6 @@ const KidsGlasses = () => {
           >
             <option value={"Blue"}>blue</option>
             <option value={"Green"}>green</option>
-            <option value={"Orange"}>orange</option>
             <option value={"Brown"}>brown</option>
             <option value={"Silver"}>silver</option>
             <option value={"Purple"}>purple</option>
