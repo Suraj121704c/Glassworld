@@ -13,6 +13,7 @@ import {
 import { useContext } from "react";
 import { searchContext } from "../../Context/SearchContextProvider";
 import { Footer2 } from "../Footer/Footer2";
+import NavBar from "../NavBar/NavBar";
 
 const getData = (id) => {
   return fetch(`https://easy-pink-bull-shoe.cyclic.app/Products/${id}`).then(
@@ -62,7 +63,9 @@ const SingleProductPage = () => {
   ) : error ? (
     <h1>Something went Wrong Please Refresh</h1>
   ) : (
-    <>
+    
+    <div>
+      <NavBar />
       <Card align="center">
         <CardHeader>
           <Heading mb={4} color={"green"}>
@@ -129,7 +132,7 @@ const SingleProductPage = () => {
         </CardFooter>
       </Card>
       <Footer2 />
-    </>
+    </div>
   );
 };
 

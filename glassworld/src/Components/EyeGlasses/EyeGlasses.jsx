@@ -6,9 +6,12 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay } from "swiper";
 import { Footer2 } from "../Footer/Footer2";
+import NavBar from "../NavBar/NavBar";
 
 const EyeGlasses = () => {
   return (
+    <>
+    <NavBar />
     <div>
       <img
         style={{ marginTop: "20px", marginBottom: "20px" }}
@@ -505,6 +508,7 @@ const EyeGlasses = () => {
       <Footer2 />
 
     </div>
+    </>
   );
 };
 

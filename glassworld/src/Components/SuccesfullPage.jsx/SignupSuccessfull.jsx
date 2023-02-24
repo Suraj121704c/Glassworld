@@ -1,10 +1,14 @@
 import { Box, Heading, Text,Button } from '@chakra-ui/react';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
+import NavBar from '../NavBar/NavBar';
+import { Footer2 } from '../Footer/Footer2';
 
 export default function SignUpSuccess() {
   return (
-    <Box textAlign="center" py={10} px={6}>
+    <>
+    <NavBar />
+    <Box textAlign="center" py={10} px={6} height={"600px"}>
       <CheckCircleIcon boxSize={'50px'} color={'green.500'} />
       <Heading as="h2" size="xl" mt={6} mb={2}>
         Thanks For Shopping with us
@@ -26,5 +30,7 @@ export default function SignUpSuccess() {
       </Button>
       </Link>
     </Box>
+    <Footer2 />
+    </>
   );
 }

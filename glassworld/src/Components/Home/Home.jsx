@@ -6,10 +6,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard, Grid } from "swiper";
 import Footer from "../Footer/Footer";
+import NavBar from "../NavBar/NavBar";
 
 const Home = () => {
   return (
     <div>
+      <NavBar />
       <div
         style={{ marginTop: "20px", marginBottom: "20px", textAlign: "center" }}
       >

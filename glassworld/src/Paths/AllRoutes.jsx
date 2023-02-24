@@ -15,6 +15,8 @@ import LoginSuccess from "../Components/SuccesfullPage.jsx/LoginSuccessfull";
 import SignUpSuccess from "../Components/SuccesfullPage.jsx/SignupSuccessfull";
 import Payment from "../Components/Payment/Payment";
 import ArticleList from "../Components/Home-EyeTest/Blog";
+import Dashboard from "../Components/DashBoard/Dashboard";
+import Create from "../Components/DashBoard/Createa";
 
 const AllRoutes = () => {
   return (
@@ -40,6 +42,8 @@ const AllRoutes = () => {
       <Route path="/success" element={<SignUpSuccess />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/article" element={<ArticleList />}/>
+      <Route path="/dashboard" element={<Dashboard />}/>
+      <Route path="/create" element={<Create />}/>
     </Routes>
   );
 };

@@ -1,10 +1,12 @@
 import React from "react";
 import "../ContactGlasses/Contact.css";
 import { Footer2 } from "../Footer/Footer2";
+import NavBar from "../NavBar/NavBar";
 
 const ContactGlasses = () => {
   return (
     <div>
+      <NavBar />
       <div
         className="bar"
         style={{

@@ -13,6 +13,7 @@ import {
 import { useContext } from "react";
 import { searchContext } from "../../Context/SearchContextProvider";
 
+
 const NavBar = () => {
   const { whishData, setWhishData } = useContext(searchContext);
   const { isOpen, onOpen, onClose } = useDisclosure();

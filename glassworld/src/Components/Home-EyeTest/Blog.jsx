@@ -13,10 +13,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Footer2 } from "../Footer/Footer2";
+import NavBar from "../NavBar/NavBar";
 
 const ArticleList = () => {
   return (
     <>
+    <NavBar />
       <Container maxW={"7xl"} p="12">
         <Heading as="h1">Stories by Glass Wear Team</Heading>
         <Box

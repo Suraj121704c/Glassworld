@@ -22,6 +22,7 @@ import { Footer2 } from "../Footer/Footer2";
 import { searchContext } from "../../Context/SearchContextProvider";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 const ComputerGlasses = () => {
   const [page, setPage] = useState(1);
@@ -153,6 +154,7 @@ const ComputerGlasses = () => {
 
   return (
     <div>
+      <NavBar />
       <div>
         <img
           src="https://static1.lenskart.com/media/desktop/img/Feb23/style/plp/PLP%20Camapaign%20-%20WEB%20(3).jpg"

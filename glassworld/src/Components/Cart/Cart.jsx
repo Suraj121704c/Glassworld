@@ -26,6 +26,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Footer2 } from "../Footer/Footer2";
+import NavBar from "../NavBar/NavBar";
 
 const Cart = () => {
   const { cartData } = useContext(searchContext);
@@ -56,17 +57,21 @@ const Cart = () => {
   if (data.length === 0) {
     return (
       <>
-      <Box height={"500px"} textAlign={"center"} justifyContent={"center"}>
-        <h1 style={{fontSize:"35px"}}>Cart Is Empty <span style={{color : "red"}}> !!! </span></h1>
-      </Box>
-      <Footer2 />
+        <NavBar />
+        <Box height={"500px"} textAlign={"center"} justifyContent={"center"}>
+          <h1 style={{ fontSize: "35px" }}>
+            Cart Is Empty <span style={{ color: "red" }}> !!! </span>
+          </h1>
+        </Box>
+        <Footer2 />
       </>
     );
   }
 
   return (
     <>
-    <div style={{height : "600px"}}>
+      <NavBar />
+      <div style={{ height: "600px" }}>
         {data.map((el) => (
           <Box
             display="flex"
@@ -225,7 +230,7 @@ const Cart = () => {
             </AlertDialogContent>
           </AlertDialog>
         </Box>
-        </div>
+      </div>
       <Footer2 />
     </>
   );
