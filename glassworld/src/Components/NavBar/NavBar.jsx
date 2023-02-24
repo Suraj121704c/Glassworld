@@ -48,18 +48,16 @@ const NavBar = () => {
           style={{
             width: "400px",
             height: "35px",
-            borderRadius: "3px",
             textAlign: "center",
             border: "2px solid gray",
             marginTop: "16px",
-            borderRadius:"20px"
+            borderRadius: "20px",
           }}
           type="text"
           placeholder="what are you looking for"
           onChange={(e) => setq(e.target.value)}
         />
         <p style={{ marginTop: "17px", fontSize: "17px" }}>Track Order</p>
-
         <Link to={"/login"} style={{ textDecoration: "none" }}>
           <p style={{ marginTop: "17px", fontSize: "17px" }}>
             Sign In & Sign Up
@@ -82,7 +80,9 @@ const NavBar = () => {
 
             <DrawerBody>
               {whishData.length === 0 ? (
-                <h1 style={{color : "green"}}>WishList is Empty! Please Add Items...</h1>
+                <h1 style={{ color: "green" }}>
+                  WishList is Empty! Please Add Items...
+                </h1>
               ) : (
                 whishData.map((wish) => (
                   <div key={wish.id}>
@@ -142,7 +142,9 @@ const NavBar = () => {
         <Link to={"/shades"}>
           <p>SUN GLASSES</p>
         </Link>
-        <p>HOME EYE-TEST</p>
+        <Link to={"/article"}>
+        <p>BLOGS</p>
+        </Link>
         <img
           src="https://static1.lenskart.com/media/desktop/img/May22/3dtryon1.png"
           alt="3dimage"
