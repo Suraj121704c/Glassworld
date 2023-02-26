@@ -28,7 +28,7 @@ export default function Login() {
   const [log, singup] = useState(true);
   const { login, isAuth } = useContext(AuthContext);
   const [name, setName] = useState("");
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = React.useState("eve.holt@reqres.in");
   const [password, setPassword] = React.useState("");
 
   const toogleForm = () => {
