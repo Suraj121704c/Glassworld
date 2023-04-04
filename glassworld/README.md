@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# excellent-noise-5475
+Frames Lobby - India's Leading Online Shopping Experience, Brought to You by LensKart. Online shopping with Frames Lobby is quick, convenient and trouble-free. You can shop for the desired product right from the comfort of your home and get them delivered straight to your doorstep. You can buy any type of glasses from us.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Home Page
+![Screenshot (2441)](https://user-images.githubusercontent.com/112753795/229875788-56d7d67e-7e6b-4b5a-86e2-1bbd96f82cd2.png)
 
-## Available Scripts
+Eye Glasses
+![Screenshot (2442)](https://user-images.githubusercontent.com/112753795/229875914-92e2db01-6b1c-4487-ae65-e287fef4422a.png)
 
-In the project directory, you can run:
+Computer Glasses
+![Screenshot (2443)](https://user-images.githubusercontent.com/112753795/229876021-0b12d490-87fc-482a-8939-92d7e80e4591.png)
 
-### `npm start`
+Kids Glasses 
+![Screenshot (2444)](https://user-images.githubusercontent.com/112753795/229876156-6177eb5a-80de-4e5c-b671-baaa92608f59.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Contact Glasses 
+![Screenshot (2445)](https://user-images.githubusercontent.com/112753795/229876231-e4df48e9-d0be-437c-a607-871c7f807cfb.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Sun GLasses 
+![Screenshot (2446)](https://user-images.githubusercontent.com/112753795/229876297-2dd1d61c-08b1-46d5-a9a1-333cecb1b086.png)
 
-### `npm test`
+Blogs
+![Screenshot (2447)](https://user-images.githubusercontent.com/112753795/229876333-cd192eab-190c-48bd-a1c7-35b39a0a2006.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Single User Page
+![Screenshot (2449)](https://user-images.githubusercontent.com/112753795/229876410-abb87acc-d213-4fff-ac8f-7ae0e8459ebf.png)
 
-### `npm run build`
+WhistList 
+![Screenshot (2450)](https://user-images.githubusercontent.com/112753795/229876464-a5b07093-4a1a-42a7-8d42-7cc1f3eb692d.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+SuccessFull Page
+![Screenshot (2451)](https://user-images.githubusercontent.com/112753795/229876535-8acdb9c8-f7a0-4455-9b71-74d251b7f8a8.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Cart Page 
+![Screenshot (2452)](https://user-images.githubusercontent.com/112753795/229876581-78704d7b-1454-4fa2-a5d3-6bbb0b5c72c6.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Payment Page
+![Screenshot (2454)](https://user-images.githubusercontent.com/112753795/229876649-083061b0-8e17-4b9f-8daa-816b59b3bb2a.png)
 
-### `npm run eject`
+Login Page
+![Screenshot (2455)](https://user-images.githubusercontent.com/112753795/229876821-90f48e76-78cf-4c7b-b518-61af7fd3a324.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Admin dashboard
+![Screenshot (2456)](https://user-images.githubusercontent.com/112753795/229877114-e7046df5-1592-4b8a-a0e3-4d160e013b68.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Product Creation Page
+![Screenshot (2457)](https://user-images.githubusercontent.com/112753795/229877186-98fa0dbf-8f48-4cf0-95e9-a90412674507.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
