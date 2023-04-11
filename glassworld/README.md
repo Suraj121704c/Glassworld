@@ -1,6 +1,8 @@
 # excellent-noise-5475
 Frames Lobby - India's Leading Online Shopping Experience, Brought to You by LensKart. Online shopping with Frames Lobby is quick, convenient and trouble-free. You can shop for the desired product right from the comfort of your home and get them delivered straight to your doorstep. You can buy any type of glasses from us.
 
+Thech Stack - HTML , CSS, JS , ReactJs, ChakraUi.
+
 Home Page
 ![Screenshot (2441)](https://user-images.githubusercontent.com/112753795/229875788-56d7d67e-7e6b-4b5a-86e2-1bbd96f82cd2.png)
 
